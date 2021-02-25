@@ -4,7 +4,7 @@ Forked from https://github.com/Yevgenium/lovelace-weather-card-chart, with tweak
 
 ## Configuration
 
-Copy `weather-card-chart.js` from this repository into your `config/www` directory first.
+Copy `weather-card-chart.js` from this repository into your `config/www` directory first (or add this repo as a custom HACS repository).
 
 Add a reference to the copied file:
 ```yaml
