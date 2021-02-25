@@ -1,6 +1,6 @@
 Forked from https://github.com/Yevgenium/lovelace-weather-card-chart, with tweaks based on personal preferences:
 
-![screenshot](https://imgur.com/vk98lqL)
+![screenshot](https://i.imgur.com/vk98lqL.png)
 
 ## Configuration
 
