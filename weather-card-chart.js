@@ -138,6 +138,14 @@ class WeatherCardChart extends Polymer.Element {
         .attributes div {
           text-align: center;
         }
+        .sun {
+          display: flex;
+          justify-content: space-evenly;
+          margin: 10px 0;
+        }
+        .sun div {
+          flex: 0 0 auto;
+        }
         .conditions {
           display: flex;
           justify-content: space-between;
@@ -160,14 +168,6 @@ class WeatherCardChart extends Polymer.Element {
             <div>
               <ha-icon icon="hass:water-percent"></ha-icon> [[roundNumber(weatherObj.attributes.humidity)]] %<br>
               <ha-icon icon="hass:gauge"></ha-icon> [[roundNumber(weatherObj.attributes.pressure)]] [[ll('uPress')]]
-            </div>
-            <div>
-              <template is="dom-if" if="[[sunObj]]">
-                <ha-icon icon="mdi:weather-sunset-up"></ha-icon> [[computeTime(sunObj.attributes.next_rising)]]<br>
-                <ha-icon icon="mdi:weather-sunset-down"></ha-icon> [[computeTime(sunObj.attributes.next_setting)]]
-              </template>
-            </div>
-            <div>
               <ha-icon icon="[[getWindDirIcon(windBearing)]]"></ha-icon> [[getWindDir(windBearing)]]<br>
               <ha-icon icon="hass:weather-windy"></ha-icon>
               <template is="dom-if" if="[[windObj]]">
@@ -175,6 +175,18 @@ class WeatherCardChart extends Polymer.Element {
               </template>
               <template is="dom-if" if="[[!windObj]]">
                 [[computeWind(weatherObj.attributes.wind_speed)]] [[ll('uSpeed')]]
+              </template>
+            </div>
+            <div>
+              <template is="dom-if" if="[[sunObj]]">
+                <div class="sun">
+                  <div>
+                    <ha-icon icon="mdi:weather-sunset-up"></ha-icon> [[computeTime(sunObj.attributes.next_rising)]]
+                  </div>
+                  <div>
+                    <ha-icon icon="mdi:weather-sunset-down"></ha-icon> [[computeTime(sunObj.attributes.next_setting)]]
+                  </div>
+                </div>
               </template>
             </div>
           </div>
