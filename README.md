@@ -1,4 +1,6 @@
-![openweathermap-eng](https://user-images.githubusercontent.com/33804747/50649716-d987f880-0fa8-11e9-9608-93aa8b2857f4.png)
+Forked from https://github.com/Yevgenium/lovelace-weather-card-chart, with tweaks based on personal preferences:
+
+![screenshot](https://imgur.com/vk98lqL)
 
 ## Configuration
 
