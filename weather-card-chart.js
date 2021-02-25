@@ -133,10 +133,10 @@ class WeatherCardChart extends Polymer.Element {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin: 10px 0px 10px 0px;
+          margin: 0px 0px 10px 0px;
         }
         .attributes div {
-          text-align: center;
+          text-align: left;
         }
         .sun {
           display: flex;
@@ -177,19 +177,17 @@ class WeatherCardChart extends Polymer.Element {
                 [[computeWind(weatherObj.attributes.wind_speed)]] [[ll('uSpeed')]]
               </template>
             </div>
-            <div>
-              <template is="dom-if" if="[[sunObj]]">
-                <div class="sun">
-                  <div>
-                    <ha-icon icon="mdi:weather-sunset-up"></ha-icon> [[computeTime(sunObj.attributes.next_rising)]]
-                  </div>
-                  <div>
-                    <ha-icon icon="mdi:weather-sunset-down"></ha-icon> [[computeTime(sunObj.attributes.next_setting)]]
-                  </div>
-                </div>
-              </template>
-            </div>
           </div>
+          <template is="dom-if" if="[[sunObj]]">
+            <div class="sun">
+              <div>
+                <ha-icon icon="mdi:weather-sunset-up"></ha-icon> [[computeTime(sunObj.attributes.next_rising)]]
+              </div>
+              <div>
+                <ha-icon icon="mdi:weather-sunset-down"></ha-icon> [[computeTime(sunObj.attributes.next_setting)]]
+              </div>
+            </div>
+          </template>
           <ha-chart-base hass="[[_hass]]" data="[[ChartData]]"></ha-chart-base>
           <div class="conditions">
             <template is="dom-repeat" items="[[forecast]]">
